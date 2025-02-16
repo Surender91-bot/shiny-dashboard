@@ -1,5 +1,5 @@
 ##################################################
-setwd("C:/Users/Admin/Downloads")
+setwd("C:/Users/pc/Downloads")
 library(shiny)
 library(readxl)
 library(ggplot2)
@@ -34,7 +34,7 @@ load_data <- function(file) {
 }
 
 # Load data from the provided file
-file_path <- "E:/sample/All countries sample data.xlsx"
+file_path <- "C:/Users/pc/Downloads/All countries sample data.xlsx"
 data <- load_data(file_path)
 
 # Ensure Country column exists and is not empty
@@ -134,7 +134,7 @@ library(readxl)
 library(dplyr)
 
 # Load the Excel file from your local drive
-file_path <- "E:/sample/All countries sample data.xlsx"
+file_path <- "C:/Users/pc/Downloads/All countries sample data.xlsx"
 sheet_names <- excel_sheets(file_path)
 
 # Read all sheets into a list and merge them
@@ -146,31 +146,7 @@ data <- bind_rows(data_list)
 # Save the full dataset as RDS
 saveRDS(data, "C:/ShinyApp/data.rds")
 
-# Load the pre-saved dataset (instead of Excel)
-file_path <- "data.rds"  # Use RDS file inside the app folder
-data <- readRDS(file_path)
-list.files("C:/ShinyApp")
-file.exists("C:/ShinyApp/app.R")
-file.rename("C:/ShinyApp/dashboard.R", "C:/ShinyApp/app.R")
-
-list.files("C:/Users/Admin/Downloads", recursive = TRUE, full.names = TRUE, pattern = "app.R$")
-list.files("E:/sample", recursive = TRUE, full.names = TRUE, pattern = "app.R$")
-file.copy("full/path/to/app.R", "C:/ShinyApp/app.R")
-list.files("C:/ShinyApp")
 
 
-
-
-
-
-install.packages("rsconnect")
-library(rsconnect)
-setwd("C:/ShinyApp")
-rsconnect::deployApp(appFiles = c("app.R", "data.rds"))
-rsconnect::setAccountInfo(name='surender-kaur',
-                          token='9376CE884299EDB1AB7F6D808C1C6407',
-                          secret='SyifKWLmEs/3OsZMTRchroXF+CqeObX0qIM6o7df')
-
-rsconnect::deployApp()
 
 
