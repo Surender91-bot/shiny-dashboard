@@ -1,7 +1,2 @@
 shiny
-ggplot2
-dplyr
-tidyr
-readxl
-plotly
-DT
+r-base
